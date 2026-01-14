@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #414141;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="https://images.pexels.com/photos/35204301/pexels-photo-35204301.jpeg"
+      width="400px"
+      alt="No image" />
+
+    <img src="./html-course.png" width="400px" alt="No image" />
+
+    <picture>
+      <source media="(min-width: 650px)" srcset="./html-course.png" />
+      <source media="(min-width: 460px)" srcset="./html-course.png" />
+      <img src="./html-course.png" width="400px" alt="No image" />
+    </picture>
+
+    <!-- an image map generator -->
+
+    <img src="html-course.png" usemap="#image-map" />
+
+    <map name="image-map">
+      <area
+        onclick="one"
+        target=""
+        alt=""
+        title=""
+        href=""
+        coords="16,93,29"
+        shape="rect" />
+    </map>
+
+    <script>
+      function one() {
+        alert("You clicked on one");
+      }
+    </script>
+  </body>
+</html>
