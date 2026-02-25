@@ -19,6 +19,7 @@
     <style>
       body {
         font-family: "Inter", sans-serif;
+        scroll-behavior: smooth;
       }
     </style>
   </head>
@@ -49,17 +50,26 @@
         real-world layout components. Each file demonstrates a specific concept
         implemented through practical examples.
       </p>
+
+      <!-- ⭐ EXPLORE BUTTON -->
+      <div class="mt-10 flex justify-center">
+        <a
+          href="00.Project/01.youtube_videos_table.html"
+          class="bg-cyan-500 hover:bg-cyan-600 text-black font-semibold px-8 py-3 rounded-lg transition shadow-lg">
+          Explore Projects ↓
+        </a>
+      </div>
     </section>
 
     <!-- PROJECT GRID -->
 
-    <section class="max-w-6xl mx-auto px-6 pb-16">
+    <section id="projects" class="max-w-6xl mx-auto px-6 pb-16">
       <h3 class="text-2xl font-semibold text-white mb-8 text-center">
         HTML Files
       </h3>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- BASIC STRUCTURE -->
+        <!-- HTML PRACTICE FILES -->
         <a href="01.index.html" class="card">Basic Structure</a>
         <a href="02.attributes.html" class="card">Attributes</a>
         <a href="03.heading.html" class="card">Headings</a>
@@ -82,13 +92,6 @@
         <a href="20.forms.html" class="card">Forms</a>
         <a href="21.semantics.html" class="card">Semantic HTML</a>
         <a href="22.media.html" class="card">Media</a>
-
-        <!-- PROJECT -->
-        <a
-          href="00.Project/01.youtube_videos_table.html"
-          class="card-highlight">
-          Mini Project — YouTube Videos Table
-        </a>
       </div>
     </section>
 
@@ -127,18 +130,19 @@
         display: block;
         background: #022c22;
         border: 1px solid #065f46;
-        padding: 18px;
-        border-radius: 12px;
+        padding: 22px;
+        border-radius: 14px;
         transition: 0.2s;
         color: #a7f3d0;
         text-decoration: none;
         font-weight: 600;
+        font-size: 1.1rem;
       }
 
       .card-highlight:hover {
         border-color: #34d399;
         color: white;
-        transform: translateY(-3px);
+        transform: translateY(-4px);
       }
     </style>
   </body>
