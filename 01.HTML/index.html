@@ -1,0 +1,145 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Foundations — Projects</title>
+
+    <!-- Tailwind CDN -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font -->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet" />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+
+  <body class="bg-slate-950 text-gray-200">
+    <!-- HEADER -->
+
+    <header class="border-b border-slate-800">
+      <div
+        class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+        <h1 class="text-xl font-bold text-cyan-400">HTML Foundations</h1>
+        <a
+          href="../index.html"
+          class="text-sm text-gray-400 hover:text-cyan-400">
+          ← Back to Home
+        </a>
+      </div>
+    </header>
+
+    <!-- INTRO -->
+
+    <section class="max-w-6xl mx-auto px-6 py-14 text-center">
+      <h2 class="text-4xl font-bold text-white">HTML Practice & Experiments</h2>
+
+      <p class="mt-6 text-gray-400 max-w-3xl mx-auto">
+        This section contains my hands-on practice with core HTML concepts from
+        basic document structure to forms, tables, media, semantic elements, and
+        real-world layout components. Each file demonstrates a specific concept
+        implemented through practical examples.
+      </p>
+    </section>
+
+    <!-- PROJECT GRID -->
+
+    <section class="max-w-6xl mx-auto px-6 pb-16">
+      <h3 class="text-2xl font-semibold text-white mb-8 text-center">
+        HTML Files
+      </h3>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- BASIC STRUCTURE -->
+        <a href="01.index.html" class="card">Basic Structure</a>
+        <a href="02.attributes.html" class="card">Attributes</a>
+        <a href="03.heading.html" class="card">Headings</a>
+        <a href="04.formatting.html" class="card">Text Formatting</a>
+        <a href="05.colors.html" class="card">Colors</a>
+        <a href="06.linktags.html" class="card">Links</a>
+        <a href="07.images.html" class="card">Images</a>
+        <a href="08.tables.html" class="card">Tables</a>
+        <a href="09.list.html" class="card">Lists</a>
+        <a href="10.class.html" class="card">Classes</a>
+        <a href="11.head.html" class="card">Head Section</a>
+        <a href="12.codes.html" class="card">Code Elements</a>
+        <a href="13.forms_one.html" class="card">Forms — Part 1</a>
+        <a href="14.input_two.html" class="card">Inputs — Part 2</a>
+        <a href="15.media.html" class="card">Media</a>
+        <a href="16.index.html" class="card">Layout Example</a>
+        <a href="17.intro.html" class="card">Introduction Page</a>
+        <a href="18.headings_list.html" class="card">Headings & Lists</a>
+        <a href="19.tables.html" class="card">Advanced Tables</a>
+        <a href="20.forms.html" class="card">Forms</a>
+        <a href="21.semantics.html" class="card">Semantic HTML</a>
+        <a href="22.media.html" class="card">Media</a>
+
+        <!-- PROJECT -->
+        <a
+          href="00.Project/01.youtube_videos_table.html"
+          class="card-highlight">
+          Mini Project — YouTube Videos Table
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer class="border-t border-slate-800">
+      <div
+        class="max-w-6xl mx-auto px-6 py-8 text-center text-gray-500 text-sm">
+        HTML is the foundation of every web application. Mastering it ensures
+        strong fundamentals for advanced development.
+      </div>
+    </footer>
+
+    <!-- CARD STYLES -->
+
+    <style>
+      .card {
+        display: block;
+        background: #0f172a;
+        border: 1px solid #1e293b;
+        padding: 18px;
+        border-radius: 12px;
+        transition: 0.2s;
+        color: #cbd5f5;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .card:hover {
+        border-color: #22d3ee;
+        color: white;
+        transform: translateY(-3px);
+      }
+
+      .card-highlight {
+        display: block;
+        background: #022c22;
+        border: 1px solid #065f46;
+        padding: 18px;
+        border-radius: 12px;
+        transition: 0.2s;
+        color: #a7f3d0;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .card-highlight:hover {
+        border-color: #34d399;
+        color: white;
+        transform: translateY(-3px);
+      }
+    </style>
+  </body>
+</html>
