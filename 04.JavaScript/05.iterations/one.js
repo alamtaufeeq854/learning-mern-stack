@@ -19,11 +19,11 @@ for (let i = 1; i <= 10; i++) {
   }
 }
 
-let myArray = ["Batman", "Ironman", "Thor"];
+let yourArray = ["Batman", "Ironman", "Thor"];
 
-console.log(myArray.length);
-for (let index = 0; index < myArray.length; index++) {
-  const element = myArray[index];
+console.log(yourArray.length);
+for (let index = 0; index < yourArray.length; index++) {
+  const element = yourArray[index];
   console.log(element);
 }
 

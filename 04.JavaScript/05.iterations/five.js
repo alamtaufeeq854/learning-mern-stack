@@ -1,10 +1,10 @@
-const coding = ["js", "py", "java", "cpp"];
+const code = ["js", "py", "java", "cpp"];
 
-coding.forEach(function (val) {
+code.forEach(function (val) {
   console.log(val);
 });
 
-coding.forEach((item) => {
+code.forEach((item) => {
   console.log(item);
 });
 
@@ -12,13 +12,13 @@ function printMe(item) {
   console.log(item);
 }
 
-coding.forEach(printMe);
+code.forEach(printMe);
 
-coding.forEach((item, index, arr) => {
+code.forEach((item, index, arr) => {
   console.log(item, index, arr);
 });
 
-const myCoding = [
+const mycode = [
   {
     languageName: "Javascript",
     languageFileName: "js",
@@ -35,6 +35,6 @@ const myCoding = [
   },
 ];
 
-myCoding.forEach((item) => {
+mycode.forEach((item) => {
   console.log(item.languageName);
 });

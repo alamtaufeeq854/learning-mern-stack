@@ -1,15 +1,15 @@
 const myNums = [1, 2, 3];
 
-const myTotal = myNums.reduce(function (acc, currval) {
+const Total = myNums.reduce(function (acc, currval) {
   console.log(`acc: ${acc} and currval: ${currval}`);
   return acc + currval;
 }, 0);
 
-console.log(myTotal);
+console.log(Total);
 
-const myTotal2 = myNums.reduce((acc, currval) => acc + currval, 0);
+const Total2 = myNums.reduce((acc, currval) => acc + currval, 0);
 
-console.log(myTotal);
+console.log(Total);
 
 const shoppingCart = [
   {

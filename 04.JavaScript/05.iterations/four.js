@@ -1,12 +1,12 @@
-const myObj = {
+const yourObj = {
   cpp: "C++",
   js: "JavaScript",
   py: "Python",
   C: "C",
 };
 
-for (const key in myObj) {
-  console.log(`${key} is a file name of ${myObj[key]}`);
+for (const key in yourObj) {
+  console.log(`${key} is a file name of ${yourObj[key]}`);
 }
 
 const programming = ["js", "py", "java", "cpp"];

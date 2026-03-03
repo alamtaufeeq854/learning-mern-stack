@@ -1,6 +1,6 @@
 // if
 
-const isUserLoggedIn = true;
+const LoggedIn = true;
 const temperature = 41;
 
 if (temperature === 40) {

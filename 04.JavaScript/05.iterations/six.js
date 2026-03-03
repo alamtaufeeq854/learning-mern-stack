@@ -13,20 +13,20 @@ console.log(values);
 
 const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-const newNums = myNums.filter((num) => {
+const newestNums = myNums.filter((num) => {
   return num > 4;
 });
-console.log(newNums);
+console.log(newestNums);
 
-const newNums2 = [];
+const newestNums2 = [];
 
 myNums.forEach((num) => {
   if (num > 4) {
-    newNums2.push(num);
+    newestNums2.push(num);
   }
 });
 
-console.log(newNums2);
+console.log(newestNums2);
 
 const books = [
   {

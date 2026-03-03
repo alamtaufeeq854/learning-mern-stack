@@ -1,6 +1,6 @@
-const userEmail = [];
+const Email = [];
 
-if (userEmail) {
+if (Email) {
   console.log("Got User Email");
 } else {
   console.log("Don't have User Email ");
@@ -14,7 +14,7 @@ if (userEmail) {
 
 // "0", "false"," ".[],{},function(){}
 
-if (userEmail.length === 0) {
+if (Email.length === 0) {
   console.log("Array Is Empty");
 }
 

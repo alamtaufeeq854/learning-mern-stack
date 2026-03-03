@@ -31,6 +31,6 @@ switch (month) {
     break;
 
   default:
-    console.log("Default Value");
+    console.log("Value given by you is defaulted");
     break;
 }

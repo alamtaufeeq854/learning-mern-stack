@@ -31,14 +31,14 @@ for (const [key, Value] of map) {
   console.log(key, ":", Value);
 }
 
-const myObj = {
+const yourObj = {
   game1: `NFS`,
   game2: `GOW`,
 };
 
 /*
 
-for (const [key, Value] of myObj) {
+for (const [key, Value] of yourObj) {
   console.log(key, ":", Value);
 }
 
