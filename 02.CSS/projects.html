@@ -1,0 +1,121 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Foundations — Projects</title>
+
+    <!-- Tailwind CDN -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font -->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet" />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+
+  <body class="bg-slate-950 text-gray-200">
+    <!-- HEADER -->
+
+    <header class="border-b border-slate-800">
+      <div
+        class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+        <h1 class="text-xl font-bold text-cyan-400">CSS Projects</h1>
+        <a
+          href="./index.html"
+          class="text-sm text-gray-400 hover:text-cyan-400">
+          ← Back to Previous page
+        </a>
+      </div>
+    </header>
+
+    <!-- INTRO -->
+
+    <section class="max-w-6xl mx-auto px-6 py-14 text-center">
+      <h2 class="text-4xl font-bold text-white">CSS Projects & Experiments</h2>
+
+      <p class="mt-6 text-gray-400 max-w-3xl mx-auto">
+        This section contains my hands-on practice with core CSS concepts
+        through real interface projects such as login forms, signup pages,
+        navigation bars, and responsive layouts. Each project focuses on
+        applying styling techniques like flexbox, grid, positioning, and modern
+        UI design to build clean and functional web interfaces.
+      </p>
+
+    <!-- PROJECT GRID -->
+
+    <section id="projects" class="max-w-6xl mx-auto px-6 pb-16">
+      <h3 class="text-4xl font-semibold text-white mb-8 px-8 py-8 text-center">
+        Project Files
+      </h3>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- CSS PROJECT FILES -->
+        <a href="./00.Project/login.html" class="card">Login Page</a>
+        <a href="./00.Project/navbar.html" class="card">Navbar page</a>
+        <a href="./00.Project/sign_up.html" class="card">Sign Up Page</a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer class="border-t border-slate-800">
+      <div
+        class="max-w-6xl mx-auto px-6 py-8 text-center text-gray-500 text-sm">
+        CSS is the backbone of visual design in web development. Mastering it enables the creation of responsive layouts, modern user interfaces, and well-structured components such as login pages, signup forms, navigation bars, and interactive UI elements.
+
+      </div>
+    </footer>
+
+    <!-- CARD STYLES -->
+
+    <style>
+      .card {
+        display: block;
+        background: #0f172a;
+        border: 1px solid #1e293b;
+        padding: 18px;
+        border-radius: 12px;
+        transition: 0.2s;
+        color: #cbd5f5;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .card:hover {
+        border-color: #22d3ee;
+        color: white;
+        transform: translateY(-3px);
+      }
+
+      .card-highlight {
+        display: block;
+        background: #022c22;
+        border: 1px solid #065f46;
+        padding: 22px;
+        border-radius: 14px;
+        transition: 0.2s;
+        color: #a7f3d0;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+
+      .card-highlight:hover {
+        border-color: #34d399;
+        color: white;
+        transform: translateY(-4px);
+      }
+    </style>
+  </body>
+</html>
