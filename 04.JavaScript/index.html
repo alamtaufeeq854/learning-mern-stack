@@ -1,0 +1,140 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Foundations — Projects</title>
+
+    <!-- Tailwind CDN -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font -->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet" />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+
+  <body class="bg-slate-950 text-gray-200">
+    <!-- HEADER -->
+
+    <header class="border-b border-slate-800">
+      <div
+        class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+        <h1 class="text-xl font-bold text-cyan-400">JavaScript Foundations</h1>
+        <a
+          href="../index.html"
+          class="text-sm text-gray-400 hover:text-cyan-400">
+          ← Back to Home
+        </a>
+      </div>
+    </header>
+
+    <!-- INTRO -->
+
+    <section class="max-w-6xl mx-auto px-6 py-14 text-center">
+      <h2 class="text-4xl font-bold text-white">
+        JavaScript Practice & Experiments
+      </h2>
+
+      <p class="mt-6 text-gray-400 max-w-3xl mx-auto">
+        This section showcases my hands-on practice with core JavaScript
+        concepts, focusing on building dynamic user interfaces, handling
+        interactions, and structuring application logic using functions, arrays,
+        objects, and asynchronous operations. Each project emphasizes creating
+        responsive, interactive, and real-world web experiences through
+        practical implementation.
+      </p>
+
+     
+      </div>
+    </section>
+
+    <!-- PROJECT GRID -->
+
+    <section id="projects" class="max-w-6xl mx-auto px-6 pb-16">
+      <h3 class="text-2xl font-semibold text-white mb-8 text-center">
+        JavaScript Files
+      </h3>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- JavaScript PRACTICE FILES -->
+        <a href="./06.dom/index.html" class="card"
+          >JavaScript File Integration</a
+        >
+        <a href="./06.dom/one.html" class="card">DOM Elements Exploration</a>
+        <a href="./06.dom/two.html" class="card"
+          >DOM Traversal and Relationships</a
+        >
+        <a href="./06.dom/three.html" class="card"
+          >Dynamic DOM Element Creation</a
+        >
+        <a href="./06.dom/four.html" class="card">DOM CRUD Operations</a>
+        <a href="./06.dom/dom.html" class="card"
+          >Complete JavaScript DOM Guide</a
+        >
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer class="border-t border-slate-800">
+      <div
+        class="max-w-6xl mx-auto px-6 py-8 text-center text-gray-500 text-sm">
+        JavaScript powers interactivity and application logic in web development.
+        Mastering it enables the creation of dynamic, responsive, and
+        user-driven web experiences for modern applications.
+      </div>
+    </footer>
+
+    <!-- CARD STYLES -->
+
+    <style>
+      .card {
+        display: block;
+        background: #0f172a;
+        border: 1px solid #1e293b;
+        padding: 18px;
+        border-radius: 12px;
+        transition: 0.2s;
+        color: #cbd5f5;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .card:hover {
+        border-color: #22d3ee;
+        color: white;
+        transform: translateY(-3px);
+      }
+
+      .card-highlight {
+        display: block;
+        background: #022c22;
+        border: 1px solid #065f46;
+        padding: 22px;
+        border-radius: 14px;
+        transition: 0.2s;
+        color: #a7f3d0;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+
+      .card-highlight:hover {
+        border-color: #34d399;
+        color: white;
+        transform: translateY(-4px);
+      }
+    </style>
+  </body>
+</html>
