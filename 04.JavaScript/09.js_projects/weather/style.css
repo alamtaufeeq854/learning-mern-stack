@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: bisque;
+  background: linear-gradient(135deg, #161629, #4f71cd);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: aquamarine;
+  backdrop-filter: blur(12px);
+  width: 400px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+input::placeholder {
+  font-weight: bold;
+  font-size: 15px;
+  color: #212121;
+}
+h1 {
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  width: 70%;
+  padding: 10px;
+  background-color: rgba(62, 156, 233, 0.779);
+  border-radius: 5px;
+  border: none;
+  color: #000000;
+  outline: none;
+  font-size: 16px;
+}
+
+button {
+  border-radius: 10px;
+  padding: 10px;
+  color: #000000;
+  border: none;
+  background-color: chartreuse;
+  cursor: pointer;
+  width: 25%;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: rgb(237, 110, 184);
+}
+
+#weather-info {
+  margin-top: 20px;
+}
+
+#error-message {
+  color: rgba(20, 254, 3, 0.297);
+  margin-top: 20px;
+}
+.hidden {
+  display: none;
+}
