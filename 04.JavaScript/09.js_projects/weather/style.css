@@ -72,7 +72,8 @@ button:hover {
 }
 
 #error-message {
-  color: rgba(20, 254, 3, 0.297);
+  color: black;
+  font-weight: 600;
   margin-top: 20px;
 }
 .hidden {
