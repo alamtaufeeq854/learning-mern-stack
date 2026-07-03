@@ -1,0 +1,110 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Foundations — Projects</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet" />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+
+  <body class="bg-slate-950 text-gray-200">
+    <!-- HEADER -->
+
+    <header class="border-b border-slate-800">
+      <div
+        class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+        <h1 class="text-xl font-bold text-cyan-400">React Foundations</h1>
+
+        <a
+          href="../index.html"
+          class="text-sm text-gray-400 hover:text-cyan-400">
+          ← Back to Home
+        </a>
+      </div>
+    </header>
+
+    <!-- INTRO -->
+
+    <section class="max-w-6xl mx-auto px-6 py-14 text-center">
+      <h2 class="text-4xl font-bold text-white">React Practice & Projects</h2>
+
+      <p class="mt-6 text-gray-400 max-w-3xl mx-auto">
+        This section contains my hands-on practice with React.js, covering
+        component-based architecture, JSX, props, state management, hooks, event
+        handling, conditional rendering, lists, forms, routing, and reusable UI
+        components. Each project focuses on building interactive and scalable
+        frontend applications using modern React development practices.
+      </p>
+    </section>
+
+    <!-- PROJECT GRID -->
+
+    <section id="projects" class="max-w-6xl mx-auto px-6 pb-16">
+      <h3 class="text-2xl font-semibold text-white mb-8 text-center">
+        React Projects
+      </h3>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <a href="https://counter-app-pink-nu.vercel.app/" class="card">
+          Counter App
+        </a>
+
+        <a href="https://background-changer-dun.vercel.app/" class="card">
+          Background Changer
+        </a>
+
+        <a href="https://password-generator-roan-eta.vercel.app/" class="card">
+          Password Generator
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer class="border-t border-slate-800">
+      <div
+        class="max-w-6xl mx-auto px-6 py-8 text-center text-gray-500 text-sm">
+        React enables the development of fast, interactive, and reusable user
+        interfaces through a component-based architecture, making it one of the
+        most popular libraries for modern frontend development.
+      </div>
+    </footer>
+
+    <!-- CARD STYLES -->
+
+    <style>
+      .card {
+        display: block;
+        background: #0f172a;
+        border: 1px solid #1e293b;
+        padding: 18px;
+        border-radius: 12px;
+        transition: 0.2s;
+        color: #cbd5e1;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .card:hover {
+        border-color: #22d3ee;
+        color: white;
+        transform: translateY(-3px);
+      }
+    </style>
+  </body>
+</html>
