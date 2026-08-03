@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" href="../../icons/signup.png" type="image/png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
       body {
@@ -14,14 +15,53 @@
         justify-content: center;
         align-items: center;
       }
+      .card {
+        background-color: rgb(2, 243, 243);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        border-radius: 15px;
+        margin-bottom: 10px;
+        width: 300px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+      form input {
+        margin: 8px 0;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-right: 15px;
+      }
+      form input::placeholder {
+        color: #0e0e0d;
+        opacity: 1;
+      }
+      .container {
+        display: flex;
+        justify-content: space-between;
+      }
+      .container input {
+        width: 48%;
+        margin-right: 15px;
+      }
+
+      button {
+        border-radius: 5px;
+        padding: 10px;
+        border: none;
+        background-color: #d9dc1f;
+        cursor: pointer;
+        margin-top: 11px;
+      }
 
       form {
         display: flex;
         flex-direction: column;
       }
 
-      .first {
-        margin-right: 180px;
+      button:hover {
+        background-color: #06f006;
       }
     </style>
     <title>Sign Up Page</title>
