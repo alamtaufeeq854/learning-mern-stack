@@ -14,7 +14,7 @@ export async function GET(request: NextRequest) {
       message: "User Found !",
       data: user,
     });
-  } catch (error) {
+  } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 400 });
   }
 }

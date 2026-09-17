@@ -40,7 +40,7 @@ export default function LoginPage() {
       } else {
         toast.error("Please, Fill up all the fields !");
       }
-    } catch (error) {
+    } catch (error:any) {
       toast.error(
         error.response?.data?.message || "Login Failed, Try again Later !",
       );

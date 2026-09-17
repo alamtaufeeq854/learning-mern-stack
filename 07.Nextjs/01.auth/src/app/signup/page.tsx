@@ -33,7 +33,7 @@ export default function SignupPage() {
       } else {
         toast.error("Please, Fill up all the fields !");
       }
-    } catch (error) {
+    } catch (error:any) {
       toast.error(
         error.response?.data?.message || "Signup Failed, Try again Later !",
       );
