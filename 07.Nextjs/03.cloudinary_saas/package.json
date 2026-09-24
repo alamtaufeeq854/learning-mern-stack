@@ -1,0 +1,40 @@
+{
+  "name": "cloudinary_saas",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "contract:emit": "prisma contract emit"
+  },
+  "dependencies": {
+    "@clerk/nextjs": "^7.9.2",
+    "@prisma/client": "^5.18.0",
+    "axios": "^1.20.0",
+    "cloudinary": "^2.11.0",
+    "dayjs": "^1.11.23",
+    "dotenv": "^17.4.2",
+    "filesize": "^11.0.24",
+    "lucide-react": "^1.46.0",
+    "next": "16.3.5",
+    "next-cloudinary": "^6.19.2",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "babel-plugin-react-compiler": "1.0.0",
+    "daisyui": "^5.7.37",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.5",
+    "prisma": "^5.18.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
