@@ -7,22 +7,22 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model todo {
+model Todo {
   id        String   @id @default(cuid())
   completed Boolean  @default(false)
   createdAt DateTime @default(now()) @db.Timestamptz(6)
   title     String
   updatedAt DateTime @updatedAt
   userId    String
-  user      user     @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  user      User     @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
 
   @@index([userId], map: "todo_userId_idx_a489d58a")
 }
 
-model user {
+model User {
   email            String    @unique
   id               String    @id
   isSubscribed     Boolean   @default(false)
   subscriptionEnds DateTime? @db.Timestamptz(6)
-  todo             todo[]
+  todo             Todo[]
 }

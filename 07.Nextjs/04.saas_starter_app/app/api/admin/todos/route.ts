@@ -28,7 +28,7 @@ export async function GET(req: NextRequest) {
     const user = await prisma.user.findUnique({
       where: { email: email || "" },
       include: {
-        todos: {
+        todo: {
           orderBy: { createdAt: "desc" },
           take: ITEMS_PER_PAGE,
           skip: (page - 1) * ITEMS_PER_PAGE,
