@@ -25,6 +25,7 @@ export default function SignIn() {
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
 
   if (!isLoaded) {
     return null;
@@ -32,28 +33,40 @@ export default function SignIn() {
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
-    if (!isLoaded) {
-      return;
-    }
+
+    if (!isLoaded) return;
+
+    setError("");
+    setLoading(true);
 
     try {
       const result = await signIn.create({
-        identifier: emailAddress,
+        identifier: emailAddress.trim(),
         password,
       });
 
+      console.log("Sign-in result:", result);
+
       if (result.status === "complete") {
-        await setActive({ session: result.createdSessionId });
-        router.push("/dashboard");
+        await setActive({
+          session: result.createdSessionId,
+        });
+
+        router.replace("/dashboard");
       } else {
-        console.error(JSON.stringify(result, null, 2));
+        setError("Additional verification is required.");
+        setLoading(false);
       }
     } catch (err: any) {
-      console.error("error", err.errors[0].message);
-      setError(err.errors[0].message);
+      console.error("Sign-in error:", err);
+
+      setError(
+        err?.errors?.[0]?.message || "Unable to sign in. Please try again.",
+      );
+
+      setLoading(false);
     }
   }
-
   return (
     <div className="flex items-center justify-center min-h-screen bg-background">
       <Card className="w-full max-w-md">
@@ -87,8 +100,7 @@ export default function SignIn() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-2 top-1/2 -translate-y-1/2"
-                >
+                  className="absolute right-2 top-1/2 -translate-y-1/2">
                   {showPassword ? (
                     <EyeOff className="h-4 w-4 text-gray-500" />
                   ) : (
@@ -102,8 +114,8 @@ export default function SignIn() {
                 <AlertDescription>{error}</AlertDescription>
               </Alert>
             )}
-            <Button type="submit" className="w-full">
-              Sign In
+            <Button type="submit" className="w-full" disabled={loading}>
+              {loading ? "Signing in..." : "Sign In"}
             </Button>
           </form>
         </CardContent>
@@ -112,8 +124,7 @@ export default function SignIn() {
             Don&apos;t have an account?{" "}
             <Link
               href="/sign-up"
-              className="font-medium text-primary hover:underline"
-            >
+              className="font-medium text-primary hover:underline">
               Sign up
             </Link>
           </p>
