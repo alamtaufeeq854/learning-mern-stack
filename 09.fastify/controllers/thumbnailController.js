@@ -3,7 +3,6 @@ const path = require("path");
 const fs = require("fs");
 const { pipeline } = require("stream");
 const util = require("util");
-const Thumbnail = require("../models/thumbnail.js");
 const { default: fastify } = require("fastify");
 
 const pipelineAsync = util.promisify(pipeline);

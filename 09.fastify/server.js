@@ -7,7 +7,7 @@ const cors = require("@fastify/cors");
 
 // Plugins
 fastify.register(require("@fastify/cors"));
-fastify.register(require("@fastify//multipart"));
+fastify.register(require("@fastify/multipart"));
 fastify.register(require("@fastify/sensible"));
 fastify.register(require("@fastify/env"), {
   dotenv: true,
@@ -31,11 +31,45 @@ fastify.register(require("@fastify/static"), {
 fastify.register(require("./plugins/mongodb"));
 fastify.register(require("./plugins/jwt"));
 
+// Swagger configuration
+fastify.register(require("@fastify/swagger"), {
+  openapi: {
+    openapi: "3.0.3",
+
+    info: {
+      title: "My Backend API",
+      description: "API documentation for authentication and thumbnails",
+      version: "1.0.0",
+    },
+
+    servers: [
+      {
+        url: "http://localhost:3000",
+        description: "Local development server",
+      },
+    ],
+
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: "http",
+          scheme: "bearer",
+          bearerFormat: "JWT",
+        },
+      },
+    },
+  },
+});
+
+fastify.register(require("@fastify/swagger-ui"), {
+  routePrefix: "/docs",
+});
+
 // register routes
 fastify.register(require("./routes/auth"), { prefix: "/api/auth" });
 fastify.register(require("./routes/thumbnail"), { prefix: "/api/thumbnail" });
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3000;
 
 // Declare a route
 fastify.get("/", function (request, reply) {
@@ -74,8 +108,8 @@ fastify.get("/test-db", async (request, reply) => {
 
     reply.send({ database: status });
   } catch (error) {
-    fastify.log.error(err);
-    reply.status(500).send({ error: "Failed to test database" });
+    fastify.log.error(error);
+    return reply.status(500).send({ error: "Failed to test database" });
     process.exit(1);
   }
 });
