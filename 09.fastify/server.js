@@ -22,6 +22,11 @@ fastify.register(require("@fastify/env"), {
   },
 });
 
+const fs = require("fs");
+
+const uploadsDir = path.join(__dirname, "uploads");
+fs.mkdirSync(uploadsDir, { recursive: true });
+
 fastify.register(require("@fastify/static"), {
   root: path.join(__dirname, "uploads"),
   prefix: "/uploads/", // optional: default '/'
@@ -117,7 +122,10 @@ fastify.get("/test-db", async (request, reply) => {
 // start the server
 const start = async () => {
   try {
-    await fastify.listen({ port: PORT });
+    await fastify.listen({
+      port: Number(process.env.PORT) || 3000,
+      host: "0.0.0.0",
+    });
     fastify.log.info(`Server is running at http://localhost:${PORT}`);
   } catch (err) {
     fastify.log.error(err);

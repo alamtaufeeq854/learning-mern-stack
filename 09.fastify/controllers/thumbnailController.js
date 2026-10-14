@@ -26,7 +26,7 @@ exports.createThumbnail = async (request, reply) => {
 
         await pipelineAsync(part.file, fs.createWriteStream(saveTo));
       } else {
-        fields[part.filename] = part.value;
+        fields[part.fieldname] = part.value;
       }
     }
 
@@ -70,7 +70,7 @@ exports.getThumbnail = async (request, reply) => {
       return reply.notFound("Thumbnail not found");
     }
 
-    reply.send(thumbnails);
+    reply.send(thumbnail);
   } catch (err) {
     reply.send(err);
   }

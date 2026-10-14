@@ -73,34 +73,14 @@ module.exports = async function (fastify, opts) {
             "Uploads a thumbnail image and creates a thumbnail document for the authenticated user.",
           security: [{ bearerAuth: [] }],
           consumes: ["multipart/form-data"],
-          body: {
-            type: "object",
-            required: ["videoName", "version"],
-            properties: {
-              videoName: {
-                type: "string",
-                examples: ["Introduction to Node.js"],
-              },
-              version: {
-                type: "string",
-                examples: ["1.0"],
-              },
-              paid: {
-                type: "string",
-                description: 'Send "true" or "false" as a form field.',
-                examples: ["false"],
-              },
-              image: {
-                type: "string",
-                format: "binary",
-                description: "Thumbnail image file",
-              },
-            },
-          },
           response: {
             201: {
               description: "Thumbnail created",
               ...thumbnailResponse,
+            },
+            400: {
+              description: "Invalid multipart request",
+              ...errorResponse,
             },
             401: {
               description: "Missing or invalid JWT",

@@ -8,9 +8,9 @@ const thumbnailSchema = new mongoose.Schema({
   },
 
   videoName: { type: String, required: true },
-  version: { type: String},
+  version: { type: String },
   image: { type: String, required: true },
-  paid: { type: String, default:false },
+  paid: { type: Boolean, default: false },
 });
 
-module.exports=mongoose.model("Thumbnail",thumbnailSchema)
+module.exports = mongoose.model("Thumbnail", thumbnailSchema);

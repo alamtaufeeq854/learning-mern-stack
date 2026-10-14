@@ -9,7 +9,7 @@ exports.register = async (request, reply) => {
     if (!name || !email || !password || !country) {
       return reply
         .status(400)
-        .send({ msg: "All fields are required !", success: false });
+        .send({ message: "All fields are required !", success: false });
     }
 
     const hashedPassword = await bcrypt.hash(password, 13);
