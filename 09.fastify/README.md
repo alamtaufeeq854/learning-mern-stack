@@ -43,5 +43,3 @@ JWT_TOKEN=your_jwt_secret
 - **Swagger Documentation:** https://fastify-6xnb.onrender.com/docs#
 
 - **Postman Documentation:** https://documenter.getpostman.com/view/55362925/2sBYHRV2GC
-
-- **GitHub Repository:** https://github.com/alamtaufeeq854/learning-mern-stack/tree/main/09.fastify
