@@ -3,7 +3,7 @@ import express from "express";
 import morgan from "morgan";
 import rateLimit from "express-rate-limit";
 import helmet from "helmet";
-import mongooseSanitize from "express-mongo-sanitize";
+import mongoSanitize from "@exortek/express-mongo-sanitize";
 import hpp from "hpp";
 import cookieParser from "cookie-parser";
 import cors from "cors";
@@ -12,6 +12,9 @@ import healthRoute from "./routes/health.routes.js";
 import userRoute from "./routes/user.route.js";
 
 dotenv.config();
+
+import swaggerUi from "swagger-ui-express";
+import swaggerSpec from "./config/swagger.js";
 
 const app = express();
 
@@ -26,7 +29,7 @@ const limiter = rateLimit({
 
 //security middleware
 app.use(helmet());
-app.use(mongooseSanitize());
+app.use(mongoSanitize());
 app.use(hpp());
 app.use("/api", limiter);
 
@@ -72,6 +75,7 @@ app.use(
 
 app.use("/health", healthRoute);
 app.use("/api/v1/user", userRoute);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // It Should be always at bottom
 // 404 handler
