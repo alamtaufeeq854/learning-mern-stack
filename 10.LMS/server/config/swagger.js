@@ -18,6 +18,17 @@ const options = {
       },
     ],
 
+   tags: [
+  { name: "Health", description: "API health and server status" },
+  { name: "Authentication", description: "Signup, login and password management" },
+  { name: "Profile", description: "User profile and account management" },
+  { name: "Courses", description: "Course management APIs" },
+  { name: "Lectures", description: "Course lecture management APIs" },
+  { name: "Course Progress", description: "Manage course progress" },
+  { name: "Payments", description: "Razorpay payment APIs" },
+  { name: "Media", description: "Upload media files to Cloudinary" },
+],
+
     components: {
       securitySchemes: {
         cookieAuth: {
