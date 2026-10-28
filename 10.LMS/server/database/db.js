@@ -39,12 +39,10 @@ class DatabaseConnection {
       }
 
       const connectionOptions = {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
         maxPoolSize: 10,
         serverSelectionTimeoutMS: 5000,
         socketTimeoutMS: 45000,
-        family: 4, // use IPv4
+        family: 4,
       };
 
       if (process.env.NODE_ENV === "development") {
@@ -67,11 +65,7 @@ class DatabaseConnection {
         `Retrying connection... Attempt ${this.retryCount} of ${MAX_RETRIES}`,
       );
 
-      await new Promise((resolve) =>
-        setTimeout(() => {
-          resolve;
-        }, RETRY_INTERVAL),
-      );
+      await new Promise((resolve) => setTimeout(resolve, RETRY_INTERVAL));
 
       return this.connect();
     } else {
