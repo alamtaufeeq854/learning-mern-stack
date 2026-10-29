@@ -1,4 +1,7 @@
 import dotenv from "dotenv";
+
+dotenv.config();
+
 import express from "express";
 import morgan from "morgan";
 import rateLimit from "express-rate-limit";
@@ -7,11 +10,13 @@ import mongoSanitize from "@exortek/express-mongo-sanitize";
 import hpp from "hpp";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import connectDB from "./database/db.js";
 
 import healthRoute from "./routes/health.routes.js";
 import userRoute from "./routes/user.route.js";
-
-dotenv.config();
+import courseRoute from "./routes/course.route.js";
+import courseProgressRoute from "./routes/courseProgress.route.js";
+import razorpayRoute from "./routes/razorpay.routes.js";
 
 import swaggerUi from "swagger-ui-express";
 import swaggerSpec from "./config/swagger.js";
@@ -75,6 +80,9 @@ app.use(
 
 app.use("/health", healthRoute);
 app.use("/api/v1/user", userRoute);
+app.use("/api/v1/course", courseRoute);
+app.use("/api/v1/progress", courseProgressRoute);
+app.use("/api/v1/purchase", razorpayRoute);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // It Should be always at bottom
@@ -87,8 +95,10 @@ app.use((req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(
-    `Server is running at PORT ${PORT} in ${process.env.NODE_ENV} mode`,
-  );
+connectDB().then(() => {
+  app.listen(PORT, () => {
+    console.log(
+      `Server is running at PORT ${PORT} in ${process.env.NODE_ENV} mode`,
+    );
+  });
 });
