@@ -61,9 +61,7 @@ app.use((err, req, res, next) => {
 
 app.use(
   cors({
-    origin:
-      process.env.CLIENT_URL ||
-      "https://lms-backend-git-main-taufeeq-alam.vercel.app/",
+    origin: process.env.CLIENT_URL || "https://lms-backend-8iw8.onrender.com",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS"],
     allowedHeaders: [
