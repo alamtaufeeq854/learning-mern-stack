@@ -47,12 +47,11 @@ const lectureSchema = new mongoose.Schema(
   },
 );
 
-lectureSchema.pre("save", function (next) {
+lectureSchema.pre("save", function () {
   if (this.duration) {
     // OPtional
     this.duration = Math.round(this.duration * 100) / 100;
   }
-  next();
 });
 
 export const Lecture = mongoose.model("Lecture", lectureSchema);

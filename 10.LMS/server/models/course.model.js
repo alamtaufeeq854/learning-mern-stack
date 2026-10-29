@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { Lecture } from "./lecture.model.js";
 
 const courseSchema = new mongoose.Schema(
   {
@@ -7,6 +8,8 @@ const courseSchema = new mongoose.Schema(
       required: [true, "Course Title is required"],
       trim: true,
       maxLength: [100, "Title can't exceed upto 100 characters"],
+      unique: true,
+      lowercase: true,
     },
 
     subTitle: {
@@ -37,7 +40,7 @@ const courseSchema = new mongoose.Schema(
     },
 
     price: {
-      type: String,
+      type: Number,
       required: [true, "Course Price is required"],
       min: [0, "Course Price must be a non-negative number"],
     },
@@ -81,6 +84,18 @@ const courseSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
+
+    // Rated by those who purchased the course
+    rating: {
+      type: [
+        {
+          type: Number,
+          min: 0,
+          max: 5,
+        },
+      ],
+      default: [],
+    },
   },
   {
     timestamps: true,
@@ -89,15 +104,41 @@ const courseSchema = new mongoose.Schema(
   },
 );
 
+
 courseSchema.virtual("averageRating").get(function () {
-  return 0;
+  const ratings = this.rating ?? [];
+
+  if (ratings.length === 0) {
+    return null;
+  }
+
+  const ratingSum = ratings.reduce((sum, rating) => sum + rating, 0);
+
+  return ratingSum / ratings.length;
+  
 });
 
-courseSchema.pre("save", function (next) {
+courseSchema.pre("save", function () {
   if (this.lectures) {
     this.totalLectures = this.lectures.length;
   }
-  next();
+});
+
+courseSchema.pre("save", async function () {
+  let total = 0;
+  let video;
+
+  if (this.lectures) {
+    for (const lecture of this.lectures) {
+      video = await Lecture.findById(lecture);
+
+      if (video) {
+        total += video.duration;
+      }
+    }
+  }
+
+  this.totalDuration = total;
 });
 
 export const Course = mongoose.model("Course", courseSchema);
