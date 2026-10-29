@@ -13,8 +13,8 @@ const options = {
 
     servers: [
       {
-        url: "http://localhost:8000",
-        description: "Local development server",
+        url: "https://lms-backend-8iw8.onrender.com",
+        description: "Production server",
       },
     ],
 
