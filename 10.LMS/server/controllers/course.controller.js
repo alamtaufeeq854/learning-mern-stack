@@ -180,17 +180,6 @@ export const updateCourseDetails = catchAsync(async (req, res) => {
 
   let thumbnailResult = null;
 
-  if (req.file) {
-    thumbnailResult = await uploadMedia(req.file.path);
-
-    if (!thumbnailResult?.secure_url || !thumbnailResult?.public_id) {
-      throw new ApiError("Thumbnail upload failed", 500);
-    }
-
-    course.publicId = thumbnailResult?.public_id;
-    course.thumbnail = thumbnailResult?.secure_url;
-  }
-
   if (title !== undefined) course.title = title;
   if (category !== undefined) course.category = category;
   if (isPublished !== undefined) course.isPublished = isPublished;
@@ -205,6 +194,17 @@ export const updateCourseDetails = catchAsync(async (req, res) => {
     }
 
     course.price = coursePrice;
+  }
+
+  if (req.file) {
+    thumbnailResult = await uploadMedia(req.file.path);
+
+    if (!thumbnailResult?.secure_url || !thumbnailResult?.public_id) {
+      throw new ApiError("Thumbnail upload failed", 500);
+    }
+
+    course.publicId = thumbnailResult?.public_id;
+    course.thumbnail = thumbnailResult?.secure_url;
   }
 
   await course.save();
