@@ -95,14 +95,14 @@ router.post("/login", authenticateUser);
 /**
  * @swagger
  * /api/v1/user/signout:
- *   post:
+ *   get:
  *     summary: Sign out the current user
  *     tags: [Authentication]
  *     responses:
  *       200:
  *         description: Signed out successfully
  */
-router.post("/signout", signOutUser);
+router.get("/signout", signOutUser);
 
 /**
  * @swagger
